@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy New Year 2026 • Year of the Horse</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caramel&family=Fredoka+One&family=Lobster&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page page-countdown" data-state="locked">
+  <div class="bg" aria-hidden="true"></div>
+  <canvas id="bgCanvas" class="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- VIEW 1: COUNTDOWN (locked) -->
+  <div class="view view-countdown" id="countdownView">
+    <div class="shell">
+      <header class="top">
+        <div class="badge">TẾT 2026 • YEAR OF THE HORSE</div>
+        <h1 class="title">Đếm ngược đến Tết 2026</h1>
+        <p class="sub">Thiệp sẽ tự mở khi đến thời điểm đã đặt.</p>
+      </header>
+
+      <section class="card glass">
+        <div class="count-grid" aria-live="polite">
+          <div class="count-item"><div class="num" id="d">--</div><div class="lab">Ngày</div></div>
+          <div class="count-item"><div class="num" id="h">--</div><div class="lab">Giờ</div></div>
+          <div class="count-item"><div class="num" id="m">--</div><div class="lab">Phút</div></div>
+          <div class="count-item"><div class="num" id="s">--</div><div class="lab">Giây</div></div>
+        </div>
+
+        <div class="hero-row" aria-hidden="true">
+          <div class="lantern">
+            <span class="lantern-core"></span>
+            <span class="lantern-tail"></span>
+          </div>
+
+          <img class="horse-img float" src="assets/horse.png" alt="" />
+
+          <div class="year-stamp">2026</div>
+        </div>
+
+        <div class="cta">
+          <div class="note">
+            <strong>Chưa tới giờ</strong> nên thiệp đang khóa.<br>
+            (Countdown đặt tới <strong>00:00 (GMT+7) ngày 17/02/2026</strong>)
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>Made for 2026 • Year of the Horse</span>
+      </footer>
+    </div>
+  </div>
+
+  <!-- VIEW 2: CARD (unlocked) -->
+  <div class="view view-card" id="cardView" hidden>
+    <main class="scene" id="scene">
+      <!-- Decorations -->
+      <div class="ring" aria-hidden="true"></div>
+      <div class="sparkles" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <section class="stage glass">
+        <div class="stage-top">
+          <div class="mini-badge">TẾT 2026</div>
+          <h1 class="hny">
+            <span class="hny-1">Happy</span>
+            <span class="hny-2">New Year</span>
+          </h1>
+          <div class="big-year">2026</div>
+        </div>
+
+        <div class="stage-mid" aria-hidden="true">
+          <div class="lantern lantern-big swing">
+            <span class="lantern-core"></span>
+            <span class="lantern-tail"></span>
+          </div>
+
+          <img class="horse-hero" src="assets/horse.png" alt="Horse mascot" />
+
+          <div class="firework" aria-hidden="true"></div>
+          <div class="firework firework-2" aria-hidden="true"></div>
+        </div>
+
+        <div class="stage-bottom">
+          <button class="btn" id="btn" type="button">Ấn vào đây nè! 🎉</button>
+          <p class="subline">(Click để bật hiệu ứng)</p>
+        </div>
+
+        <!-- Icon thư (click mở lại lời chúc) -->
+        <button class="mail" id="mail" aria-label="Mở thiệp" type="button">
+          <span class="mail-top"></span>
+          <span class="mail-body"></span>
+          <span class="mail-heart"></span>
+        </button>
+      </section>
+
+      <!-- Fortune overlay: show first, then reveal random wish -->
+      <section class="fortune" id="fortune" aria-label="Bốc quẻ">
+        <div class="fortune-panel glass">
+          <div class="fortune-title">Bốc quẻ đầu năm</div>
+          <img class="fortune-img" src="assets/fortune_box.png" alt="Hộp thẻ quẻ" />
+          <button class="btn" id="drawBtn" type="button">Bốc quẻ 🎴</button>
+          <div class="fortune-hint">Rút 1 lời chúc ngẫu nhiên cho năm mới</div>
+        </div>
+      </section>
+
+      <!-- Modal thiệp -->
+      <section class="letter" id="letter" role="dialog" aria-modal="true" aria-label="Nội dung thiệp">
+        <button class="close" id="close" aria-label="Đóng" type="button">×</button>
+        <h2 class="letter-title">Thiệp Tết 2026</h2>
+        <p class="letter-meta">Bạn rút được quẻ:</p>
+        <p class="letter-quote" id="quote">—</p>
+      </section>
+
+      <div class="overlay" id="overlay" aria-hidden="true"></div>
+    </main>
+  </div>
+
+  <script src="js/bg.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
