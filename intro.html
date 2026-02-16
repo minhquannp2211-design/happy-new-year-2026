@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thiệp Tết 2026 • Year of the Horse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caramel&family=Fredoka+One&family=Lobster&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page page-intro">
+  <div class="bg" aria-hidden="true"></div>
+  <canvas id="bgCanvas" class="bg-canvas" aria-hidden="true"></canvas>
+
+  <main class="scene" id="scene">
+    <!-- vòng tròn/họa tiết kiểu 'vibe' giống mini app gốc -->
+    <div class="ring" aria-hidden="true"></div>
+    <div class="sparkles" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <section class="stage glass">
+      <div class="stage-top">
+        <div class="mini-badge">TẾT 2026</div>
+        <h1 class="hny">
+          <span class="hny-1">Happy</span>
+          <span class="hny-2">New Year</span>
+        </h1>
+        <div class="big-year">2026</div>
+      </div>
+
+      <div class="stage-mid" aria-hidden="true">
+        <div class="lantern lantern-big swing">
+          <span class="lantern-core"></span>
+          <span class="lantern-tail"></span>
+        </div>
+
+        <img class="horse-hero" src="assets/horse.png" alt="Horse mascot" />
+
+        <div class="firework" aria-hidden="true"></div>
+        <div class="firework firework-2" aria-hidden="true"></div>
+      </div>
+
+      <div class="stage-bottom">
+        <button class="btn" id="btn">Ấn vào đây nè! 🎉</button>
+        <p class="subline">(Click để bật hiệu ứng — nội dung lời chúc sẽ thêm sau)</p>
+      </div>
+
+      <!-- Icon thư (click mở modal) -->
+      <button class="mail" id="mail" aria-label="Mở thiệp">
+        <span class="mail-top"></span>
+        <span class="mail-body"></span>
+        <span class="mail-heart"></span>
+      </button>
+    </section>
+
+    <!-- Modal thiệp (placeholder) -->
+    <section class="letter" id="letter" role="dialog" aria-modal="true" aria-label="Nội dung thiệp">
+      <button class="close" id="close" aria-label="Đóng">×</button>
+      <h2 class="letter-title">Thiệp Tết 2026</h2>
+      <p class="letter-text">
+        Phần <strong>nội dung</strong> (ảnh nữ / text / tên người gửi) mình để trống theo yêu cầu.
+        Hiện tại chỉ dựng <strong>giao diện + hiệu ứng</strong> trước.
+      </p>
+      <div class="letter-footer">— (sẽ điền sau)</div>
+    </section>
+
+    <div class="overlay" id="overlay" aria-hidden="true"></div>
+  </main>
+
+  <script src="js/bg.js"></script>
+  <script src="js/intro.js"></script>
+</body>
+</html>
